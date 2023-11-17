@@ -6,7 +6,7 @@
 /*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:18:04 by gcavanna          #+#    #+#             */
-/*   Updated: 2023/11/17 17:22:59 by gcavanna         ###   ########.fr       */
+/*   Updated: 2023/11/17 21:13:37 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void not_replace(std::string& content, const std::string& s1, const std::string&
     size_t start = 0;
     std::string result;
 
-    while ((pos = content.find(s1, start)) != std::string::npos)
+    while ((pos = content.find(s1, start)) != std::string::npos) //std::string::npos è un valore speciale definito nella libreria standard C++ nel contesto delle operazioni su stringhe. Questo valore rappresenta una posizione non valida o una condizione di "non trovato" all'interno di una stringa.
     {
         // Copia la parte di stringa prima dell'occorrenza di s1
         result += content.substr(start, pos - start);
@@ -81,3 +81,11 @@ int main(int ac, char **av)
 
     return 0;
 }
+
+// std::istreambuf_iterator<char>(inputFile): Questa parte crea un oggetto std::istreambuf_iterator<char>, che è un tipo di iteratore che può essere utilizzato per attraversare il contenuto di uno stream. In questo caso, il costruttore prende come argomento inputFile, che è l'oggetto std::ifstream associato al file che si desidera leggere. Questo crea un iteratore all'inizio dello stream del file.
+
+// std::istreambuf_iterator<char>(): Questo crea un oggetto std::istreambuf_iterator<char> senza specificare uno stream. Quando lo fai senza argomenti, crea un iteratore "end-of-stream", che rappresenta la fine dello stream.
+
+// ( ... ): Questa parte del codice crea un oggetto std::string utilizzando il costruttore di std::string che accetta due iteratori. Il primo iteratore (std::istreambuf_iterator<char>(inputFile)) indica l'inizio del range, e il secondo iteratore (std::istreambuf_iterator<char>()) indica la fine del range.
+
+// inputFile.close(): Dopo aver letto il contenuto del file nella stringa content, viene chiamato il metodo close() sull'oggetto inputFile per chiudere il file
