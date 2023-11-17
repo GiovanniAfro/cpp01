@@ -6,13 +6,13 @@
 #    By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/01 13:50:09 by gcavanna          #+#    #+#              #
-#    Updated: 2023/11/17 16:36:45 by gcavanna         ###   ########.fr        #
+#    Updated: 2023/11/17 16:36:34 by gcavanna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Weapon03
+NAME = Ex04
 
-SRC = HumanA.cpp HumanB.cpp main.cpp Weapon.cpp
+SRC = main.cpp
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
