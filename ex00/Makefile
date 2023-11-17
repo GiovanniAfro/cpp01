@@ -6,13 +6,13 @@
 #    By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/01 13:50:09 by gcavanna          #+#    #+#              #
-#    Updated: 2023/11/17 10:24:17 by gcavanna         ###   ########.fr        #
+#    Updated: 2023/11/17 10:48:47 by gcavanna         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 
+NAME = Zombie
 
-SRC = 
+SRC = newZombie.cpp randomChump.cpp main.cpp Zombie.cpp
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
