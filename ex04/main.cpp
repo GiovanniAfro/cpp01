@@ -6,7 +6,7 @@
 /*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 16:18:04 by gcavanna          #+#    #+#             */
-/*   Updated: 2023/11/17 21:13:37 by gcavanna         ###   ########.fr       */
+/*   Updated: 2023/11/18 15:33:24 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,4 @@ int main(int ac, char **av)
 
 // ( ... ): Questa parte del codice crea un oggetto std::string utilizzando il costruttore di std::string che accetta due iteratori. Il primo iteratore (std::istreambuf_iterator<char>(inputFile)) indica l'inizio del range, e il secondo iteratore (std::istreambuf_iterator<char>()) indica la fine del range.
 
-// inputFile.close(): Dopo aver letto il contenuto del file nella stringa content, viene chiamato il metodo close() sull'oggetto inputFile per chiudere il file
+// inputFile.close(): Dopo aver letto il contenuto del file nella stringa content, viene chiamato il metodo close() sull'oggetto inputFile per chiudere il file 
