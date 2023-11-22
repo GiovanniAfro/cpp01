@@ -6,7 +6,7 @@
 /*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 15:59:12 by gcavanna          #+#    #+#             */
-/*   Updated: 2023/11/21 17:48:31 by gcavanna         ###   ########.fr       */
+/*   Updated: 2023/11/21 17:15:56 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void    Harl::complain(std::string level)
     if (it != logFunctions.end())
         (this->*(it->second))();
     else 
-        std::cerr << "bruw what is this: " << level << std::endl;
+        std::cerr << "Unknown log level: " << level << std::endl;
 }
 
 
