@@ -6,7 +6,7 @@
 /*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 15:59:12 by gcavanna          #+#    #+#             */
-/*   Updated: 2023/11/21 17:15:56 by gcavanna         ###   ########.fr       */
+/*   Updated: 2023/11/22 12:13:15 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,22 +38,26 @@ void    Harl::error(void)
 
 typedef void(Harl:: *LogFunction)();
 
-void    Harl::complain(std::string level)
+void Harl::complain(std::string level)
 {
-    std::map<std::string, LogFunction> logFunctions;
-    logFunctions["DEBUG"] = &Harl::debug;
-    logFunctions["INFO"] = &Harl::info;
-    logFunctions["WARNING"] = &Harl::warning;
-    logFunctions["ERROR"] = &Harl::error;
+    // Converti il log level in maiuscolo per una comparazione case-insensitive
+    for (size_t i = 0; i < level.length(); i++)
+        level[i] = toupper(level[i]);
 
-    // Trova il livello di log nella mappa
-    std::map<std::string, LogFunction>::iterator it = logFunctions.find(level);
-
-    // Se il livello di log è trovato, chiama la funzione membro corrispondente
-    if (it != logFunctions.end())
-        (this->*(it->second))();
-    else 
-        std::cerr << "Unknown log level: " << level << std::endl;
+    // Usa lo statement switch per filtrare i messaggi
+    switch (level[0]) {
+        case 'D':
+            debug();
+        case 'I':
+            info();
+        case 'W':
+            warning();
+        case 'E':
+            error();
+            break;
+        default:
+            std::cerr << "Unknown log level: " << level << std::endl;
+    }
 }
 
 
