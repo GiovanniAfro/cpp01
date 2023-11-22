@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 11:17:04 by gcavanna          #+#    #+#             */
-/*   Updated: 2023/11/17 11:23:43 by gcavanna         ###   ########.fr       */
+/*   Updated: 2023/11/22 12:21:13 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,4 @@ Zombie* zombieHorde(int N, std::string name)
         horde[i] = Zombie(name); //inizializzo ogni zombie con il secondo costruttore
 
     return horde; //ritorno puntatore al primo zombie
-    
 }

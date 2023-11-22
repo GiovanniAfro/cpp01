@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 10:37:52 by gcavanna          #+#    #+#             */
-/*   Updated: 2023/11/17 10:53:07 by gcavanna         ###   ########.fr       */
+/*   Updated: 2023/11/22 12:17:49 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main() {
+int main() 
+{
     // Using newZombie to create a zombie on the heap
     Zombie* heapZombie = newZombie("Heap Zombie");
     heapZombie->announce();

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcavanna <gcavanna@student.42firenze.it    +#+  +:+       +#+        */
+/*   By: gcavanna <gcavanna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 15:59:12 by gcavanna          #+#    #+#             */
-/*   Updated: 2023/11/22 12:13:15 by gcavanna         ###   ########.fr       */
+/*   Updated: 2023/11/22 13:15:29 by gcavanna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,28 +36,41 @@ void    Harl::error(void)
     std::cout << "ERROR: This is unacceptable! I want to speak to the manager now." << std::endl;
 }
 
-typedef void(Harl:: *LogFunction)();
-
 void Harl::complain(std::string level)
 {
-    // Converti il log level in maiuscolo per una comparazione case-insensitive
-    for (size_t i = 0; i < level.length(); i++)
-        level[i] = toupper(level[i]);
+    void(Harl:: *LogFunction[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+    std::string log[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
-    // Usa lo statement switch per filtrare i messaggi
-    switch (level[0]) {
-        case 'D':
-            debug();
-        case 'I':
-            info();
-        case 'W':
-            warning();
-        case 'E':
-            error();
+    size_t i = 0;
+    while (level.compare(log[i]) && i < 4)
+        i++;
+
+    switch(i)
+    {
+        case 0:
+        {
+            (this->*LogFunction[0])();
+        }
+        case 1:
+        {
+            (this->*LogFunction[1])();
+        }
+        case 2:
+        {
+            (this->*LogFunction[2])();
+        }
+        case 3:
+        {
+            (this->*LogFunction[3])();
             break;
+        }
         default:
-            std::cerr << "Unknown log level: " << level << std::endl;
+        {
+            std::cerr << "bruw what is this: " << level << std::endl;
+            break;
+        }
     }
+
 }
 
 
